@@ -183,6 +183,14 @@ h1, h2, h3, h4 {
   justify-content: center;
 }
 
+.banner-text-desktop {
+  display: inline;
+}
+
+.banner-text-mobile {
+  display: none;
+}
+
 /* ===== 6. Header ===== */
 .header {
   background: rgba(255, 255, 255, 0.9);
@@ -341,8 +349,257 @@ h1, h2, h3, h4 {
   .nav-links, .header-cta {
     display: flex;
   }
+  .header-cta-text {
+    display: inline;
+  }
   .hamburger {
     display: none;
+  }
+}
+
+/* ===== CORREÇÃO EXCLUSIVA PARA MOBILE (<= 768px) ===== */
+@media (max-width: 768px) {
+  :root {
+    --banner-height: 24px;
+    --header-height: 64px;
+  }
+
+  html {
+    scroll-padding-top: 88px;
+  }
+
+  /* 1. Faixa Superior — Linha única, centralizada, 12px */
+  .info-banner {
+    height: 24px;
+    min-height: 24px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .banner-text-desktop {
+    display: none !important;
+  }
+
+  .banner-text-mobile {
+    display: inline !important;
+    white-space: nowrap;
+  }
+
+  /* 2. Header & Container Compactos (64px) */
+  .header {
+    height: 64px;
+    top: 24px;
+  }
+
+  .header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  /* 3. Logo / Marca (Central Fibra em uma linha) */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex-shrink: 1;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    flex-shrink: 0;
+  }
+
+  .logo-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .logo-name {
+    font-size: 1rem;
+    font-weight: 800;
+    white-space: nowrap;
+    line-height: 1.1;
+    letter-spacing: -0.3px;
+  }
+
+  .logo-tagline {
+    font-size: 0.62rem;
+    white-space: nowrap;
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  /* 4. Botão WhatsApp Circular no Header (48px x 48px) */
+  .nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .header-cta {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    margin: 0 !important;
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.35);
+    flex-shrink: 0;
+  }
+
+  .header-cta .header-cta-text {
+    display: none !important;
+  }
+
+  .header-cta .whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+  }
+
+  /* 5. Menu Hambúrguer (44px, alinhado verticalmente) */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px;
+    margin: 0;
+    gap: 5px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  /* Menu Mobile Aberto */
+  .mobile-nav.active {
+    top: 88px;
+  }
+
+  /* 6. Hero Mobile — Redução de Espaços Vazios */
+  .hero {
+    padding: 20px 0 16px;
+  }
+
+  .hero .container {
+    gap: 16px;
+  }
+
+  .hero-title {
+    font-size: 1.95rem;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .hero-buttons .btn {
+    padding: 13px 22px;
+  }
+
+  .hero-image-wrapper {
+    margin-top: 2px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  /* 7. WhatsApp Flutuante no Mobile (diferenciado do header) */
+  .whatsapp-float {
+    bottom: 18px;
+    right: 16px;
+  }
+
+  .whatsapp-float-btn {
+    width: 52px;
+    height: 52px;
+    padding: 12px;
+    justify-content: center;
+  }
+
+  .whatsapp-float-btn .whatsapp-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Ajuste fino para telas ultra-estreitas (<= 360px) */
+@media (max-width: 360px) {
+  .header .container {
+    padding: 0 8px;
+    gap: 4px;
+  }
+  .logo {
+    gap: 6px;
+  }
+  .logo-name {
+    font-size: 0.92rem;
+  }
+  .logo-tagline {
+    font-size: 0.58rem;
+  }
+  .header-cta {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .hamburger {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
   }
 }
 
