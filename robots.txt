@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://studioorvion-lgtm.github.io/central-fibra/sitemap.xml
