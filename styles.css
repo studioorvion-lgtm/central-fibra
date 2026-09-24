@@ -361,11 +361,11 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
   :root {
     --banner-height: 24px;
-    --header-height: 64px;
+    --header-height: 66px;
   }
 
   html {
-    scroll-padding-top: 88px;
+    scroll-padding-top: 90px;
   }
 
   /* 1. Faixa Superior — Linha única, centralizada, 12px */
@@ -390,9 +390,9 @@ h1, h2, h3, h4 {
     white-space: nowrap;
   }
 
-  /* 2. Header & Container Compactos (64px) */
+  /* 2. Header & Container Equilibrados (66px) */
   .header {
-    height: 64px;
+    height: 66px;
     top: 24px;
   }
 
@@ -401,16 +401,15 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 12px;
-    gap: 8px;
+    padding: 0 20px;
     flex-wrap: nowrap;
   }
 
-  /* 3. Logo / Marca (Central Fibra em uma linha) */
+  /* 3. Logo / Marca (à esquerda, centralizado verticalmente, tamanho equilibrado) */
   .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     min-width: 0;
     flex-shrink: 1;
     text-decoration: none;
@@ -451,45 +450,16 @@ h1, h2, h3, h4 {
     text-transform: uppercase;
   }
 
-  /* 4. Botão WhatsApp Circular no Header (48px x 48px) */
+  /* 4. REMOVER Botão WhatsApp do Header no Mobile (somente logo e hambúrguer) */
   .nav {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 6px;
-    flex-shrink: 0;
-  }
-
-  .nav-links {
     display: none !important;
   }
 
   .header-cta {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-    min-height: 48px;
-    padding: 0 !important;
-    border-radius: 50% !important;
-    margin: 0 !important;
-    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.35);
-    flex-shrink: 0;
-  }
-
-  .header-cta .header-cta-text {
     display: none !important;
   }
 
-  .header-cta .whatsapp-icon {
-    width: 24px;
-    height: 24px;
-    margin: 0;
-  }
-
-  /* 5. Menu Hambúrguer (44px, alinhado verticalmente) */
+  /* 5. Menu Hambúrguer (à direita, 44px, centralizado verticalmente) */
   .hamburger {
     display: flex !important;
     flex-direction: column;
@@ -513,16 +483,16 @@ h1, h2, h3, h4 {
 
   /* Menu Mobile Aberto */
   .mobile-nav.active {
-    top: 88px;
+    top: 90px;
   }
 
-  /* 6. Hero Mobile — Redução de Espaços Vazios */
+  /* 6. Hero Mobile — Redução de ~30px do espaço entre botões e imagem G+ */
   .hero {
-    padding: 20px 0 16px;
+    padding: 18px 0 16px;
   }
 
   .hero .container {
-    gap: 16px;
+    gap: 14px !important;
   }
 
   .hero-title {
@@ -534,12 +504,12 @@ h1, h2, h3, h4 {
   .hero-subtitle {
     font-size: 0.98rem;
     line-height: 1.5;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .hero-buttons {
     gap: 10px;
-    margin-bottom: 16px;
+    margin-bottom: 10px !important;
   }
 
   .hero-buttons .btn {
@@ -547,7 +517,7 @@ h1, h2, h3, h4 {
   }
 
   .hero-image-wrapper {
-    margin-top: 2px;
+    margin-top: 0 !important;
   }
 
   .hero-image {
@@ -555,7 +525,7 @@ h1, h2, h3, h4 {
     border-radius: 16px;
   }
 
-  /* 7. WhatsApp Flutuante no Mobile (diferenciado do header) */
+  /* 7. WhatsApp Flutuante no Mobile (mantido inalterado) */
   .whatsapp-float {
     bottom: 18px;
     right: 16px;
@@ -577,11 +547,10 @@ h1, h2, h3, h4 {
 /* Ajuste fino para telas ultra-estreitas (<= 360px) */
 @media (max-width: 360px) {
   .header .container {
-    padding: 0 8px;
-    gap: 4px;
+    padding: 0 14px;
   }
   .logo {
-    gap: 6px;
+    gap: 8px;
   }
   .logo-name {
     font-size: 0.92rem;
@@ -589,17 +558,11 @@ h1, h2, h3, h4 {
   .logo-tagline {
     font-size: 0.58rem;
   }
-  .header-cta {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
-  }
   .hamburger {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    min-height: 40px;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
   }
 }
 
